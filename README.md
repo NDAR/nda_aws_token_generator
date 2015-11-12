@@ -51,6 +51,7 @@ Copy and paste the following code into your 'get_token_example.py' script.
 
 ``` python
 from nda_aws_token_generator import *
+import getpass
 
 web_service_url = 'https://ndar.nih.gov/DataManager/dataManager'
 username  = input('Enter your NIMH Data Archives username:')
