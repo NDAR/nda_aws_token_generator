@@ -9,6 +9,12 @@ import hashlib
 import logging
 import xml.etree.ElementTree as etree
 
+import sys
+
+if sys.version_info[0] == 2:
+    import urllib2 as urllib_request
+else:
+    from urllib import request as urllib_request
 
 class NDATokenGenerator(object):
     __schemas = {
@@ -16,7 +22,7 @@ class NDATokenGenerator(object):
         'data': 'http://gov/nih/ndar/ws/datamanager/server/bean/jaxb'
     }
 
-    def __init__(self, url):
+    def __init__(self, url='https://ndar.nih.gov/DataManager/dataManager'):
         assert url is not None
         self.url = url
         logging.debug('constructed with url %s' % url)
@@ -64,15 +70,15 @@ class NDATokenGenerator(object):
 
     def __make_request(self, request_message):
         logging.debug('making post request to %s' % self.url)
-        import urllib.request
+
         headers = {
             'SOAPAction': '"generateToken"',
             'Content-Type': 'text/xml; charset=utf-8'
         }
 
-        request = urllib.request.Request(self.url, data=request_message, headers=headers)
+        request = urllib_request.Request(self.url, data=request_message, headers=headers)
         logging.debug(request)
-        response = urllib.request.urlopen(request)
+        response = urllib_request.urlopen(request)
         return self.__parse_response(response.read())
 
     def __parse_response(self, response):
