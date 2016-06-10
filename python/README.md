@@ -1,4 +1,4 @@
-Python3 NDA AWS Token Generator
+Python NDA AWS Token Generator
 ===============================
 
 Requests an AWS Token from a NIMHDA web service.
