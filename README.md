@@ -31,7 +31,7 @@ Expiration:    2015-10-28T02:44:26-04:00
 
 ### Requirements
 
-- Python 3 (all modules used are in standard library)
+All modules used are in standard library for python2 and python3.
 
 ### Example Usage
 
