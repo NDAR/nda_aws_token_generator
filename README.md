@@ -38,7 +38,7 @@ Expiration:    2015-10-28T02:44:26-04:00
 Install the NDA token generator library.
 
 ``` bash
-cd ~/nda_aws_token_generator/python3/
+cd ~/nda_aws_token_generator/python/
 sudo python setup.py install
 ```
 Create a python script that uses the library to generate tokens.
@@ -75,7 +75,7 @@ print('aws_access_key_id=%s\n'
 Test running your script.
 
 ``` bash
-ubuntu@ip-10-0-100-69:~/nda_aws_token_generator/python3$ python get_token_example.py 
+ubuntu@ip-10-0-100-69:~/nda_aws_token_generator/python$ python get_token_example.py 
 
 Enter your NIMH Data Archives username:username
 Enter your NIMH Data Archives password:
