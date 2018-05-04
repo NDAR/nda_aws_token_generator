@@ -50,13 +50,22 @@ vim get_token_example.py
 Copy and paste the following code into your 'get_token_example.py' script.
 
 ``` python
-from nda_aws_token_generator import *
 import getpass
-from ConfigParser import ConfigParser
+import os
+import sys
+if sys.version_info[0] < 3:
+    # Python 2 specific imports
+    input = raw_input
+    from ConfigParser import ConfigParser
+else:
+    # Python 3 specific imports
+    from configparser import ConfigParser
+
+from nda_aws_token_generator import *
 
 web_service_url = 'https://ndar.nih.gov/DataManager/dataManager'
-username  = input('Enter your NIMH Data Archives username:')
-password  = getpass.getpass('Enter your NIMH Data Archives password:')
+username  = input('Enter your NIMH Data Archives username: ')
+password  = getpass.getpass('Enter your NIMH Data Archives password: ')
 
 generator = NDATokenGenerator(web_service_url)
 
@@ -72,7 +81,7 @@ parser.set('NDA', 'aws_access_key_id', token.access_key)
 parser.set('NDA', 'aws_secret_access_key', token.secret_key)
 parser.set('NDA', 'aws_session_token', token.session)
 
-with open (os.path.expanduser('~/.aws/credentials'), 'wb') as configfile:
+with open (os.path.expanduser('~/.aws/credentials'), 'w') as configfile:
     parser.write(configfile)
 
 print('aws_access_key_id=%s\n'
