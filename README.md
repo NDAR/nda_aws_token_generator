@@ -1,7 +1,7 @@
 # nda_aws_token_generator
 Libraries for using NDA web services to generate AWS tokens for accessing data
 
-Requires NDA username, password, and server URL https://ndar.nih.gov/DataManager/dataManager
+Requires NDA username, password, and server URL https://nda.nih.gov/DataManager/dataManager
 
 Tokens expire every 24 hours, and the expiration date and time are included in the response from the web server in YYYY-MM-DDTHH:MM:SS-TZ format (TZ=HH:MM).
 
@@ -17,7 +17,7 @@ Tokens expire every 24 hours, and the expiration date and time are included in t
 ### Example Usage
 
 ``` bash
-ubuntu@ip-10-0-100-69:~/nda_aws_token_generator/curl$ bash generate_token.sh 'username' 'password' 'https://ndar.nih.gov/DataManager/dataManager'
+ubuntu@ip-10-0-100-69:~/nda_aws_token_generator/curl$ bash generate_token.sh 'username' 'password' 'https://nda.nih.gov/DataManager/dataManager'
 
 Beginning token request...
 Access Key:    ASIAIL35Q7*REDACTED*
@@ -54,7 +54,7 @@ from nda_aws_token_generator import *
 import getpass
 from ConfigParser import ConfigParser
 
-web_service_url = 'https://ndar.nih.gov/DataManager/dataManager'
+web_service_url = 'https://nda.nih.gov/DataManager/dataManager'
 username  = input('Enter your NIMH Data Archives username:')
 password  = getpass.getpass('Enter your NIMH Data Archives password:')
 

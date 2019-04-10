@@ -1,6 +1,6 @@
 ## NDA AWS Token Generator
 ## Author: NIMH Data Archives
-##         http://ndar.nih.gov
+##         http://nda.nih.gov
 ## License: MIT
 ##          https://opensource.org/licenses/MIT
 
@@ -22,7 +22,7 @@ class NDATokenGenerator(object):
         'data': 'http://gov/nih/ndar/ws/datamanager/server/bean/jaxb'
     }
 
-    def __init__(self, url='https://ndar.nih.gov/DataManager/dataManager'):
+    def __init__(self, url='https://nda.nih.gov/DataManager/dataManager'):
         assert url is not None
         self.url = url
         logging.debug('constructed with url %s' % url)
