@@ -1,4 +1,7 @@
 # nda_aws_token_generator
+
+**Temporary AWS credentials (FederationUser Tokens) provided by the Data Manager service are being deprecated. Procedures for obtaining FederationUser Tokens using the new Package Service are available on [this wiki](https://github.com/NDAR/nda-data-access-example-code).**  
+
 Libraries for using NDA web services to generate AWS tokens for accessing data
 
 Requires NDA username, password, and server URL https://nda.nih.gov/DataManager/dataManager
